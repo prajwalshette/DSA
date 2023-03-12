@@ -46,6 +46,7 @@ public:
             //insert temp into tail ke age
             tail->next = temp;
             tail = temp;
+            //after inserting pop kar do wahi node ko
             pq.pop();
             if(temp->next != NULL)pq.push(temp->next);
         }
