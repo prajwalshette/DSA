@@ -12,12 +12,12 @@ public:
                 i++;
             }
              
-            if(i < n && word[i] == 'b') {
+            if(word[i] == 'b') {
                 count++;
                 i++;
             }
             
-            if(i < n && word[i] == 'c') {
+            if(word[i] == 'c') {
                 count++;
                 i++;
             }
