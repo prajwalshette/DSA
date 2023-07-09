@@ -8,10 +8,11 @@ public:
       m[s[i]]++;
     }
         
-      int res = m.begin()->second;
-      for(auto & i: m){
-          if(i.second!=res)return false;
-      }
-    return true; 
+    int count = m[s[0]];
+    for(auto e:m)
+        if(e.second != count)
+            return false;
+            
+    return true;
     }
 };
