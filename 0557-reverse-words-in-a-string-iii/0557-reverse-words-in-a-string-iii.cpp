@@ -1,32 +1,18 @@
 class Solution {
 public:
     string reverseWords(string s) {
-        stack<string> st;
-        string str="";
-        
-        for(int i=s.length()-1;i>=0;i--){
-            str = str + s[i];
-            if(s[i] == ' ' ){
-                str.pop_back();
-                st.push(str);
-                str= "";
+         
+        int i=0, j=0, n=s.length(); 
+        while(j < n){
+            if(s[j+1]==' ' || j==n-1){ // j traverse through the word until it reaches its last letter
+                int k = j;
+                while(k>=i)
+                    swap(s[k--], s[i++]); // Reverse the word by swapping its letters
+                j++;
+                i = j+1; // i maintains position of first letter of word
             }
-            else if(i==0){
-                
-                st.push(str);
-            }
+            j++;
         }
-        string ans="";
-        while(!st.empty()){
-            if(st.size()==1){
-                ans = ans + st.top();
-            }
-            else{
-            ans = ans + st.top() + ' ';
-            }
-            st.pop();
-        }
-        
-        return ans;
+        return s;
     }
 };
